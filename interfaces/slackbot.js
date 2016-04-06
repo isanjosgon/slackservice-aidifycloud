@@ -11,29 +11,34 @@ var bot = new SlackBot({
 
 bot.on('start', function() {
 	var params = {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png",
+			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/accepted.png",
 			"attachments": [
 				{
-					"fallback": "New pull request to check from @josesalazar",
-					"color": "#FFA74D",
+					"fallback": "@josesalazar accepted your pull request",
+					"color": "#6BAD6B",
 					"fields": [
 						{
 							"title": "Description",
-							"value": "New pull request to check from @josesalazar\ntitle: \"new feature\"\nbody: \"please pull these awesome changes\"",
+							"value": "@josesalazar merged your pull request\ntitle: \"new feature\"\nbody: \"please pull these awesome changes\"",
 							"short": false
 						},
 						{
 							"title": "Repo",
 							"value": "aidify/test",
 							"short": true
+						},
+						{
+							"title": "Points earned",
+							"value": "+2000",
+							"short": true
 						}
-					],
-					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png"
+					]
 				}
 			]
 		};
 	
-	bot.postMessageToChannel('general', '*ai{D}fy message*', params);
+	bot.postMessageToChannel('general', '*ai{D}fy message*');
+	bot.postMessageToUser('adriano90', '*ai{D}fy message*');
 });
 
 module.exports = bot;
