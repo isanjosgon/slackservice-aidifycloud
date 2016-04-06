@@ -11,7 +11,7 @@ var bot = new SlackBot({
 
 bot.on('start', function() {
 	var params = {
-			"icon_url": "http://icons.iconarchive.com/icons/kyo-tux/aeon/256/Sign-LogOff-icon.png",
+			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png",
 			"attachments": [
 				{
 					"fallback": "New pull request to check from @josesalazar",
