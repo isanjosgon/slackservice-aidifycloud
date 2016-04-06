@@ -21,10 +21,10 @@ const UserRepository = require('./model/userrepository');
 const MessageRepository = require('./model/messagerepository');
 
 let userRepository = new UserRepository();
-let messageRepository = new MessageRepository(config.templates, bot);
-let assignPullRequest = new AssignPullRequestUserCase(userRepository);
-let notifyUserUseCase = new NotifyUserUseCase(userRepository);
+let messageRepository = new MessageRepository(logger, config.templates, bot);
+let assignPullRequestUseCase = new AssignPullRequestUserCase(userRepository, messageRepository);
+let notifyUserUseCase = new NotifyUserUseCase(messageRepository);
 
-let broker = new Broker(logger, assignPullRequest, notifyUserUseCase);
+let broker = new Broker(logger, assignPullRequestUseCase, notifyUserUseCase);
 
 })();

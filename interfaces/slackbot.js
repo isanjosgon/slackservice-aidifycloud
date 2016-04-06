@@ -9,36 +9,10 @@ var bot = new SlackBot({
 	name: process.env.SLACKBOT_NAME
 });
 
+var object = require('json-templater/object');
+
 bot.on('start', function() {
-	var params = {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/accepted.png",
-			"attachments": [
-				{
-					"fallback": "@josesalazar accepted your pull request",
-					"color": "#6BAD6B",
-					"fields": [
-						{
-							"title": "Description",
-							"value": "@josesalazar merged your pull request\ntitle: \"new feature\"\nbody: \"please pull these awesome changes\"",
-							"short": false
-						},
-						{
-							"title": "Repo",
-							"value": "aidify/test",
-							"short": true
-						},
-						{
-							"title": "Points earned",
-							"value": "+2000",
-							"short": true
-						}
-					]
-				}
-			]
-		};
-	
-	bot.postMessageToChannel('general', '*ai{D}fy message*');
-	bot.postMessageToUser('adriano90', '*ai{D}fy message*');
+	bot.postMessageToChannel('general', "*ai{D}fy ready!!!*");
 });
 
 module.exports = bot;

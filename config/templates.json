@@ -1,96 +1,96 @@
 {
 	"templates": {
 		"pullrequestevent-opened" : {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png",
 			"attachments": [
 				{
-					"fallback": "New pull request to check from @josesalazar",
+					"fallback": "New pull request to check from @{{eventUser}}",
 					"color": "#FFA74D",
 					"fields": [
 						{
 							"title": "Description",
-							"value": "New pull request to check from @josesalazar\ntitle: \"new feature\"\nbody: \"please pull these awesome changes\"",
+							"value": "New pull request to check from @{{eventUser}}\ntitle: \"{{title}}\"\nbody: \"{{body}}\"",
 							"short": false
 						},
 						{
 							"title": "Repo",
-							"value": "aidify/test",
+							"value": "{{repo}}",
 							"short": true
 						}
-					]
+					],
+					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png"
 				}
 			]
 		},
 		"pullrequestevent-reopened" : {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png",
 			"attachments": [
 				{
-					"fallback": "@josesalazar reopen a pull request",
+					"fallback": "@{{eventUser}} reopen a pull request",
 					"color": "#FFA74D",
 					"fields": [
 						{
 							"title": "Description",
-							"value": "New pull request to check from @josesalazar\ntitle: \"new feature\"\nbody: \"please pull these awesome changes\"",
+							"value": "Reopened pull request to check from @{{eventUser}}\ntitle: \"{{title}}\"\nbody: \"{{body}}\"",
 							"short": false
 						},
 						{
 							"title": "Repo",
-							"value": "aidify/test",
+							"value": "{{repo}}",
 							"short": true
 						}
-					]
+					],
+					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png"
 				}
 			]
 		},
 		"pullrequestevent-closed" : {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/dismissed.png",
 			"attachments": [
 				{
-					"fallback": "@josesalazar closed your pull request",
+					"fallback": "@{{eventUser}} closed your pull request",
 					"color": "#D77793",
 					"fields": [
 						{
 							"title": "Description",
-							"value": "@josesalazar closed your pull request\ntitle: \"new feature\"\nbody: \"please pull these awesome changes\"",
+							"value": "@{{eventUser}} closed your pull request\ntitle: \"{{title}}\"\nbody: \"{{body}}\"",
 							"short": false
 						},
 						{
 							"title": "Repo",
-							"value": "aidify/test",
+							"value": "{{repo}}",
 							"short": true
 						},
 						{
 							"title": "Points lost",
-							"value": "-1000",
+							"value": "{{points}}",
 							"short": true
 						}
-					]
+					],
+					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/dismissed.png"
 				}
 			]
 		},
 		"pullrequestevent-merged" : {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/accepted.png",
 			"attachments": [
 				{
-					"fallback": "@josesalazar accepted your pull request",
+					"fallback": "@{{eventUser}} merged your pull request",
 					"color": "#6BAD6B",
 					"fields": [
 						{
 							"title": "Description",
-							"value": "@josesalazar merged your pull request\ntitle: \"new feature\"\nbody: \"please pull these awesome changes\"",
+							"value": "@{{eventUser}} merged your pull request\ntitle: \"{{title}}\"\nbody: \"{{body}}\"",
 							"short": false
 						},
 						{
 							"title": "Repo",
-							"value": "aidify/test",
+							"value": "{{repo}}",
 							"short": true
 						},
 						{
 							"title": "Points earned",
-							"value": "+2000",
+							"value": "{{points}}",
 							"short": true
 						}
-					]
+					],
+					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/accepted.png"
 				}
 			]
 		}

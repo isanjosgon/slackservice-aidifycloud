@@ -5,7 +5,7 @@
 const _ = require('lodash');
 const ASSIGNABLE_USER_LOCATION = 'working';
 
-class NotifyUser {
+class AssignPullRequest {
 
 	constructor(userRepository, messageRepository) {
 		this.userRepository = userRepository;
@@ -27,21 +27,10 @@ class NotifyUser {
 					return;
 				}
 				
-				let message = {
-					receiver: user.login,
-					from: params.user,
-					type: params.type,
-					action: params.action,
-					repo: params.repo,
-					points: params.points
-				};
-				
-				console.log("Message %j", message);
-				
 				self.messageRepository
-					.send(message)
-					.then(function(res) {
-						res && res.ok(true);
+					.send(user.login, params)
+					.then(function(data) {
+						res && res.ok(data);
 					})
 					.catch(function(err) {
 						res && res.ko(err);
@@ -53,6 +42,6 @@ class NotifyUser {
 	}
 }
 
-module.exports = NotifyUser;
+module.exports = AssignPullRequest;
 
 })();

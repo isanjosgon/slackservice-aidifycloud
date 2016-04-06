@@ -6,7 +6,7 @@ const redis = require('redis');
 
 class Broker {
 
-	constructor(logger, saveActivity) {
+	constructor(logger, assignPullRequest, notifyUser) {
 		
 		this.client = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
 		this.client.auth(process.env.REDIS_PASSWORD);
@@ -17,8 +17,14 @@ class Broker {
 			if (logger) {
 				logger.info('Action: ' + action + ', Message: ' + message);
 			}
-			if(service == 'ACTIVITYMANAGEMENT' && action == 'CREATE_ACTIVITY') {
-				saveActivity.execute(JSON.parse(message.substring(message.indexOf(':')+1, message.length)));
+			let params = JSON.parse(message.substring(message.indexOf(':')+1, message.length));
+			if(service == 'ACTIVITYMANAGEMENT' && action == 'CREATE_ACTIVITY'
+				&& params.type == 'pullrequestevent' && (params.action == 'opened' || params.action == 'reopened')) {
+				console.log("assign");
+				assignPullRequest.execute(params);
+			} else {
+				console.log("notify");
+				notifyUser.execute(params);
 			}
 		});
 	}

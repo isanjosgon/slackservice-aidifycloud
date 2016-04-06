@@ -21,7 +21,7 @@ class UserRepository {
 					if (err) {
 						return reject(err);
 					}
-		console.log("User list %j", res.body.result);
+
 					resolve(res.body.result);
 				});
 		});
