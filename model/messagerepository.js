@@ -21,7 +21,7 @@ class MessageRepository {
 				return reject('unknown activity');
 			}
 			let message = object(self.templates[templateIdFormat], params);
-			self.slackbot.postMessageToUser('adriano90', "*ai{D}ify message*", message)
+			self.slackbot.postMessageToUser(user, "*ai{D}ify message*", message)
 				.then(function(data) {
 					resolve(data);
 				})
