@@ -27,7 +27,8 @@ bot.on('start', function() {
 							"value": "aidify/test",
 							"short": true
 						}
-					]
+					],
+					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png"
 				}
 			]
 		};
