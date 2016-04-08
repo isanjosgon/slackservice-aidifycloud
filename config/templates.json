@@ -2,6 +2,7 @@
 	"templates": {
 		"pullrequestevent-opened" : {
 			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
+			"username": "ai{D}fy message",
 			"attachments": [
 				{
 					"fallback": "New pull request to check from @{{eventUser}}",
@@ -9,7 +10,7 @@
 					"fields": [
 						{
 							"title": "Description",
-							"value": "New pull request to check from @{{eventUser}}\ntitle: \"{{title}}\"\nbody: \"{{body}}\"",
+							"value": "New pull request to check from @{{eventUser}}\ntitle: \"{{title}}\"\nbody: \"{{body}}\"\n<{{link}} | Go to the pull request>",
 							"short": false
 						},
 						{
@@ -24,6 +25,7 @@
 		},
 		"pullrequestevent-reopened" : {
 			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
+			"username": "ai{D}fy message",
 			"attachments": [
 				{
 					"fallback": "@{{eventUser}} reopen a pull request",
@@ -31,7 +33,7 @@
 					"fields": [
 						{
 							"title": "Description",
-							"value": "Reopened pull request to check from @{{eventUser}}\ntitle: \"{{title}}\"\nbody: \"{{body}}\"",
+							"value": "Reopened pull request to check from @{{eventUser}}\ntitle: \"{{title}}\"\nbody: \"{{body}}\"\n<{{link}} | Go to the pull request>",
 							"short": false
 						},
 						{
@@ -46,6 +48,7 @@
 		},
 		"pullrequestevent-closed" : {
 			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
+			"username": "ai{D}fy message",
 			"attachments": [
 				{
 					"fallback": "@{{eventUser}} closed your pull request",
@@ -53,7 +56,7 @@
 					"fields": [
 						{
 							"title": "Description",
-							"value": "@{{eventUser}} closed your pull request\ntitle: \"{{title}}\"\nbody: \"{{body}}\"",
+							"value": "@{{eventUser}} closed your pull request\ntitle: \"{{title}}\"\nbody: \"{{body}}\"\n<{{link}} | Go to the pull request>",
 							"short": false
 						},
 						{
@@ -73,6 +76,7 @@
 		},
 		"pullrequestevent-merged" : {
 			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
+			"username": "ai{D}fy message",
 			"attachments": [
 				{
 					"fallback": "@{{eventUser}} merged your pull request",
@@ -80,7 +84,7 @@
 					"fields": [
 						{
 							"title": "Description",
-							"value": "@{{eventUser}} merged your pull request\ntitle: \"{{title}}\"\nbody: \"{{body}}\"",
+							"value": "@{{eventUser}} merged your pull request\ntitle: \"{{title}}\"\nbody: \"{{body}}\"\n<{{link}} | Go to the pull request>",
 							"short": false
 						},
 						{

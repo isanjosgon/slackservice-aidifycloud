@@ -9,10 +9,13 @@ var bot = new SlackBot({
 	name: process.env.SLACKBOT_NAME
 });
 
-var object = require('json-templater/object');
-
 bot.on('start', function() {
-	bot.postMessageToChannel('general', "*ai{D}fy ready!!!*");
+	
+	let params = {
+		"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
+		"username": "ai{D}fy"
+	}
+	bot.postMessageToChannel('general', "ai{D}fy is ready!!!", params);
 });
 
 module.exports = bot;

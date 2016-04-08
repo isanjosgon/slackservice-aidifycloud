@@ -20,10 +20,8 @@ class Broker {
 			let params = JSON.parse(message.substring(message.indexOf(':')+1, message.length));
 			if(service == 'ACTIVITYMANAGEMENT' && action == 'CREATE_ACTIVITY'
 				&& params.type == 'pullrequestevent' && (params.action == 'opened' || params.action == 'reopened')) {
-				console.log("assign");
 				assignPullRequest.execute(params);
 			} else {
-				console.log("notify");
 				notifyUser.execute(params);
 			}
 		});
