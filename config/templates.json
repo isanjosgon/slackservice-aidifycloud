@@ -1,6 +1,7 @@
 {
 	"templates": {
 		"pullrequestevent-opened" : {
+			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
 			"attachments": [
 				{
 					"fallback": "New pull request to check from @{{eventUser}}",
@@ -22,6 +23,7 @@
 			]
 		},
 		"pullrequestevent-reopened" : {
+			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
 			"attachments": [
 				{
 					"fallback": "@{{eventUser}} reopen a pull request",
@@ -43,6 +45,7 @@
 			]
 		},
 		"pullrequestevent-closed" : {
+			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
 			"attachments": [
 				{
 					"fallback": "@{{eventUser}} closed your pull request",
@@ -69,6 +72,7 @@
 			]
 		},
 		"pullrequestevent-merged" : {
+			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
 			"attachments": [
 				{
 					"fallback": "@{{eventUser}} merged your pull request",
