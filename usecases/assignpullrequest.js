@@ -33,7 +33,7 @@ class AssignPullRequest {
 					"user": params.repo.split('/')[0],
 					"repo": params.repo.split('/')[1],
 					"number": splitLink[splitLink.length -1 ],
-					"assignee": 'isanjosgon'
+					"assignee": user.login
 				};
 				
 				self.issueRepository
