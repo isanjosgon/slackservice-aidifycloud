@@ -3,11 +3,13 @@
 'use strict';
 
 const _ = require('lodash');
+const async = require('async');
 const ASSIGNABLE_USER_LOCATION = 'working';
 
 class AssignPullRequest {
 
-	constructor(userRepository, issueRepository, messageRepository) {
+	constructor(logger, userRepository, issueRepository, messageRepository) {
+		this.logger = logger;
 		this.userRepository = userRepository;
 		this.messageRepository = messageRepository;
 		this.issueRepository = issueRepository;
@@ -28,29 +30,46 @@ class AssignPullRequest {
 					return;
 				}
 				
-				let splitLink = params.link.split('/');
-				let issue = {
-					"user": params.repo.split('/')[0],
-					"repo": params.repo.split('/')[1],
-					"number": splitLink[splitLink.length -1 ],
-					"assignee": user.login
-				};
-				
-				self.issueRepository
-					.save(issue)
-					.then(function(res) {
-						self.messageRepository
-							.send(user.login, params)
-							.then(function(data) {
-								res && res.ok(data);
-							})
-							.catch(function(err) {
+				async.parallel([function(callback) {
+					// Send slack message even if we could't update github issue
+					self.messageRepository
+						.send(user.login, params)
+						.then(function(data) {
+							callback(data);
+						})
+						.catch(function(err) {
+							callback(err);
+						});
+					}, function(callback) {
+					
+					// Update github issue
+					
+					let splitLink = params.link.split('/');
+					let issue = {
+						"user": params.repo.split('/')[0],
+						"repo": params.repo.split('/')[1],
+						"number": splitLink[splitLink.length-1],
+						"assignee": user.login
+					};
+					
+					self.issueRepository
+						.save(issue)
+						.then(function(res) {
+							self.logger.info("The user " + issue.assignee + " was assigned to the issue: " + issue.number);
+							callback(null, res);
+						})
+						.catch(function(err) {
+							self.logger.err("Fail assigning the user " + issue.assignee + " to the issue: " + issue.number);
+							callback();
+						});
+					}], function(err, result) {
+							if(err) {
 								res && res.ko(err);
-							});
-					})
-					.catch(function(err) {
-						res && res.ko(err);
-					});
+								return;
+							}
+							
+							res && res.ok(data);
+						});
 			})
 			.catch(function(err) {
 				res && res.ko(err);

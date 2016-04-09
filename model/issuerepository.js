@@ -18,8 +18,8 @@ class IssueRepository {
 				.send(JSON.stringify(issue))
 				.end(function(err, res) {
 					if (err) {
-						self.logger.info("Error updating issue " + err.message);
-						return reject(res);
+						self.logger.info("Error updating issue " + JSON.Parse(err.response.text).error);
+						return reject(JSON.Parse(err.response.text).error);
 					}
 					
 					resolve(true);

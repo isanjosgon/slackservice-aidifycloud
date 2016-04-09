@@ -24,7 +24,7 @@ const IssueRepository = require('./model/issuerepository');
 let userRepository = new UserRepository();
 let messageRepository = new MessageRepository(logger, config.templates, bot);
 let issueRepository = new IssueRepository(logger);
-let assignPullRequestUseCase = new AssignPullRequestUserCase(userRepository, issueRepository, messageRepository);
+let assignPullRequestUseCase = new AssignPullRequestUserCase(logger, userRepository, issueRepository, messageRepository);
 let notifyUserUseCase = new NotifyUserUseCase(messageRepository);
 
 let broker = new Broker(logger, assignPullRequestUseCase, notifyUserUseCase);

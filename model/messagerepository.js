@@ -21,6 +21,7 @@ class MessageRepository {
 				return reject('unknown activity');
 			}
 			let message = object(self.templates[templateIdFormat], params);
+
 			self.slackbot.postMessageToUser(user.toLowerCase(), null, message)
 				.then(function(data) {
 					resolve(data);

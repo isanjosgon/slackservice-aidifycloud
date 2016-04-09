@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/isanjosgon/slackservice-aidifycloud#readme",
   "dependencies": {
+    "async": "^2.0.0-rc.3",
     "json-templater": "^1.0.2",
     "lodash": "^4.8.2",
     "node-env-file": "^0.1.8",
