@@ -12,10 +12,10 @@ var bot = new SlackBot({
 bot.on('start', function() {
 	
 	let params = {
-		"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/aidify-logo.png",
+		"icon_url": "https://apigateway-aidifycloud.herokuapp.com/images/logo.png",
 		"username": "ai{D}fy"
 	}
-	bot.postMessageToChannel('general', "ai{D}fy!!!", params);
+	bot.postMessageToChannel('general', "ai{D}fy is ready!!!", params);
 });
 
 module.exports = bot;

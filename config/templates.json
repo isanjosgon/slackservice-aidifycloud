@@ -1,7 +1,7 @@
 {
 	"templates": {
 		"pullrequestevent-opened" : {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
+			"icon_url": "https://apigateway-aidifycloud.herokuapp.com/images/logo.png",
 			"username": "ai{D}fy message",
 			"attachments": [
 				{
@@ -19,12 +19,12 @@
 							"short": true
 						}
 					],
-					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png"
+					"thumb_url": "https://apigateway-aidifycloud.herokuapp.com/images/new-message.png"
 				}
 			]
 		},
 		"pullrequestevent-reopened" : {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
+			"icon_url": "https://apigateway-aidifycloud.herokuapp.com/images/logo.png",
 			"username": "ai{D}fy message",
 			"attachments": [
 				{
@@ -42,12 +42,12 @@
 							"short": true
 						}
 					],
-					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/new-message.png"
+					"thumb_url": "https://apigateway-aidifycloud.herokuapp.com/images/new-message.png"
 				}
 			]
 		},
 		"pullrequestevent-closed" : {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
+			"icon_url": "https://apigateway-aidifycloud.herokuapp.com/images/logo.png",
 			"username": "ai{D}fy message",
 			"attachments": [
 				{
@@ -70,12 +70,12 @@
 							"short": true
 						}
 					],
-					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/dismissed.png"
+					"thumb_url": "https://apigateway-aidifycloud.herokuapp.com/images/dismissed.png"
 				}
 			]
 		},
 		"pullrequestevent-merged" : {
-			"icon_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/logo.png",
+			"icon_url": "https://apigateway-aidifycloud.herokuapp.com/images/logo.png",
 			"username": "ai{D}fy message",
 			"attachments": [
 				{
@@ -98,7 +98,7 @@
 							"short": true
 						}
 					],
-					"thumb_url": "https://raw.githubusercontent.com/isanjosgon/slackservice-aidifycloud/master/resources/images/accepted.png"
+					"thumb_url": "https://apigateway-aidifycloud.herokuapp.com/images/accepted.png"
 				}
 			]
 		}
