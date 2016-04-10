@@ -29,4 +29,8 @@ let notifyUserUseCase = new NotifyUserUseCase(messageRepository);
 
 let broker = new Broker(logger, assignPullRequestUseCase, notifyUserUseCase);
 
+// Healthcheck server
+const Server = require('./restapi/server.js');
+new Server(logger);
+
 })();
